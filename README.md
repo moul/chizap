@@ -18,18 +18,39 @@
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/moul/chizap)
 
+## Example
+
+[embedmd]:# (example_test.go /import\ / $)
+```go
+import (
+	"github.com/go-chi/chi"
+	"go.uber.org/zap"
+	"moul.io/chizap"
+)
+
+func Example() {
+	logger := zap.NewExample()
+	r := chi.NewRouter()
+	r.Use(chizap.New(logger, &chizap.Opts{}))
+}
+```
+
 ## Usage
 
-[embedmd]:# (.tmp/usage.txt console)
-```console
-foo@bar:~$ chizap hello world
-            _                                                   _                      _        _
- __ _  ___ | | __ _  _ _   __ _  ___  _ _  ___  _ __  ___  ___ | |_  ___  _ __   _ __ | | __ _ | |_  ___
-/ _` |/ _ \| |/ _` || ' \ / _` ||___|| '_|/ -_)| '_ \/ _ \|___||  _|/ -_)| '  \ | '_ \| |/ _` ||  _|/ -_)
-\__, |\___/|_|\__,_||_||_|\__, |     |_|  \___|| .__/\___/      \__|\___||_|_|_|| .__/|_|\__,_| \__|\___|
-|___/                     |___/                |_|                              |_|
-12 CPUs, /home/moul/.local/bin/chizap, fwrz, go1.16.4
-args ["chizap","hello","world"]
+[embedmd]:# (.tmp/godoc.txt txt /FUNCTIONS/ $)
+```txt
+FUNCTIONS
+
+func New(logger *zap.Logger, opts *Opts) func(next http.Handler) http.Handler
+    New returns a logger middleware for chi, that implements the http.Handler
+    interface.
+
+
+TYPES
+
+type Opts struct{}
+    Opts contains the middleware configuration.
+
 ```
 
 ## Install
