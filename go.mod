@@ -1,13 +1,18 @@
-module moul.io/golang-repo-template
+module moul.io/chizap
 
 go 1.13
 
 require (
+	github.com/go-chi/chi v1.5.4
+	github.com/kr/text v0.2.0 // indirect
+	github.com/pkg/diff v0.0.0-20210226163009-20ebb0f2a09e // indirect
+	github.com/stretchr/testify v1.7.0
 	github.com/tailscale/depaware v0.0.0-20210622194025-720c4b409502
-	go.uber.org/goleak v1.1.10
-	go.uber.org/zap v1.17.0 // indirect
-	moul.io/motd v1.0.0
-	moul.io/srand v1.6.1
-	moul.io/u v1.25.0
-	moul.io/zapconfig v1.4.0
+	go.uber.org/atomic v1.8.0 // indirect
+	go.uber.org/multierr v1.7.0 // indirect
+	go.uber.org/zap v1.17.0
+	golang.org/x/mod v0.4.2 // indirect
+	golang.org/x/sys v0.0.0-20210330210617-4fbd30eecc44 // indirect
+	golang.org/x/tools v0.1.0 // indirect
+	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 )
