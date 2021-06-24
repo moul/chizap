@@ -31,7 +31,10 @@ import (
 func Example() {
 	logger := zap.NewExample()
 	r := chi.NewRouter()
-	r.Use(chizap.New(logger, &chizap.Opts{}))
+	r.Use(chizap.New(logger, &chizap.Opts{
+		WithReferer:   true,
+		WithUserAgent: true,
+	}))
 }
 ```
 
@@ -48,7 +51,13 @@ func New(logger *zap.Logger, opts *Opts) func(next http.Handler) http.Handler
 
 TYPES
 
-type Opts struct{}
+type Opts struct {
+	// WithReferer enables logging the "Referer" HTTP header value.
+	WithReferer bool
+
+	// WithUserAgent enables logging the "User-Agent" HTTP header value.
+	WithUserAgent bool
+}
     Opts contains the middleware configuration.
 
 ```
