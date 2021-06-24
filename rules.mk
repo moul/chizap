@@ -370,3 +370,5 @@ help::
 	@# FIXME: list other commands
 
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
+
+install:
