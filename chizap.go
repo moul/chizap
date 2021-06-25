@@ -39,14 +39,22 @@ func New(logger *zap.Logger, opts *Opts) func(next http.Handler) http.Handler {
 					zap.Int("size", ww.BytesWritten()),
 				)
 				if opts.WithReferer {
-					reqLogger = reqLogger.With(
-						zap.String("ref", ww.Header().Get("Referer")),
-					)
+					ref := ww.Header().Get("Referer")
+					if ref == "" {
+						ref = r.Header.Get("Referer")
+					}
+					if ref != "" {
+						reqLogger = reqLogger.With(zap.String("ref", ref))
+					}
 				}
 				if opts.WithUserAgent {
-					reqLogger = reqLogger.With(
-						zap.String("ua", ww.Header().Get("User-Agent")),
-					)
+					ua := ww.Header().Get("User-Agent")
+					if ua == "" {
+						ua = r.Header.Get("User-Agent")
+					}
+					if ua != "" {
+						reqLogger = reqLogger.With(zap.String("ua", ua))
+					}
 				}
 				reqLogger.Info("Served")
 			}()
