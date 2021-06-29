@@ -10,7 +10,7 @@ require (
 	github.com/tailscale/depaware v0.0.0-20210622194025-720c4b409502
 	go.uber.org/atomic v1.8.0 // indirect
 	go.uber.org/multierr v1.7.0 // indirect
-	go.uber.org/zap v1.17.0
+	go.uber.org/zap v1.18.1
 	golang.org/x/mod v0.4.2 // indirect
 	golang.org/x/sys v0.0.0-20210330210617-4fbd30eecc44 // indirect
 	golang.org/x/tools v0.1.0 // indirect
