@@ -10,6 +10,6 @@ require (
 	github.com/tailscale/depaware v0.0.0-20210622194025-720c4b409502
 	go.uber.org/atomic v1.8.0 // indirect
 	go.uber.org/multierr v1.7.0 // indirect
-	go.uber.org/zap v1.19.1
+	go.uber.org/zap v1.23.0
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 )
