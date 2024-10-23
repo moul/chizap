@@ -3,7 +3,8 @@ module moul.io/chizap
 go 1.13
 
 require (
-	github.com/go-chi/chi v1.5.4
+	github.com/go-chi/chi v1.5.5
+	github.com/go-chi/chi/v5 v5.1.0
 	github.com/kr/text v0.2.0 // indirect
 	github.com/pkg/diff v0.0.0-20210226163009-20ebb0f2a09e // indirect
 	github.com/stretchr/testify v1.8.0
